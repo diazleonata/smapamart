@@ -1,7 +1,7 @@
 {
-  "name": "workspace",
+  "name": "smapamart",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@tailwindcss/vite": "^4.1.8",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

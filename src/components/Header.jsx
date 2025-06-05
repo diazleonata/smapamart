@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
   return (
@@ -9,14 +10,8 @@ const Header = () => {
           Marketplace
         </div>
         <div className="size- flex justify-start items-center gap-2">
-          <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
-            🔍
-          </div>
-          <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
-            ❤️
-          </div>
-          <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
-            🛒
+          <div className="text-center justify-center leading-normal">
+            <FontAwesomeIcon icon="fa-solid fa-circle-dollar-to-slot" className="text-2xl"/>
           </div>
         </div>
       </div>

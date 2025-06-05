@@ -56,14 +56,6 @@ const TopPicks = () => {
               <div className="self-stretch justify-start text-black text-base font-medium font-['Roboto'] leading-normal">
                 {product.price}
               </div>
-              <div className="self-stretch inline-flex justify-start items-center gap-2">
-                <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
-                  🛒
-                </div>
-                <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
-                  ❤️
-                </div>
-              </div>
             </div>
           </div>
         ))}
