@@ -6,7 +6,7 @@ const SearchSection = () => {
         <div className="self-stretch px-3 flex flex-col justify-start items-center gap-1 overflow-hidden">
             <div className="self-stretch pl-3 pr-1 py-1 rounded-md outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex justify-end items-center gap-1">
                 <input
-                    className="flex-1 justify-start text-black/50 text-sm font-normal font-['Roboto'] leading-tight 
+                    className="flex-1 justify-start text-black/50 text-sm font-normal leading-tight 
              focus:outline-none focus:ring-1 focus:ring-black/20 focus:rounded-sm px-1 transition-all duration-300 ease-in-out"
                     type="text"
                     placeholder="Search products"

@@ -25,7 +25,7 @@ const TopPicks = () => {
         <div className="self-stretch px-3 flex flex-col justify-center items-center gap-2 overflow-hidden">
             <div className="self-stretch pt-4 inline-flex justify-start items-center gap-3">
                 <div className="flex-1 inline-flex flex-col justify-start items-start">
-                    <div className="self-stretch justify-start text-black text-lg font-medium font-['Roboto'] leading-normal">
+                    <div className="self-stretch justify-start text-black text-lg font-medium leading-normal">
                         Top Picks for You
                     </div>
                 </div>
@@ -44,15 +44,15 @@ const TopPicks = () => {
                                 backgroundPosition: "center"
                             }}
                         >
-                            <div className="p-1 left-0 top-0 absolute bg-black/50 text-white rounded-tl-md rounded-br-md text-xs font-medium font-['Roboto']">
+                            <div className="p-1 left-0 top-0 absolute bg-black/50 text-white rounded-tl-md rounded-br-md text-xs font-medium ">
                                 {product.badge}
                             </div>
                         </div>
                         <div className="self-stretch p-2 flex flex-col justify-start items-start gap-1">
-                            <div className="text-black text-xs font-normal font-['Roboto'] leading-none truncate w-full">
+                            <div className="text-black text-xs font-normal leading-none truncate w-full">
                                 {product.name}
                             </div>
-                            <div className="text-black text-base font-medium font-['Roboto'] leading-normal">
+                            <div className="text-black text-base font-medium leading-normal">
                                 ${product.price}
                             </div>
                         </div>

@@ -23,7 +23,7 @@ const PopularCategories = () => {
     <div className="self-stretch px-3 flex flex-col justify-center items-center gap-2">
       <div className="self-stretch pt-4 inline-flex justify-start items-center gap-3">
         <div className="flex-1 inline-flex flex-col justify-start items-start">
-          <div className="self-stretch justify-start text-black text-lg font-medium font-['Roboto'] leading-normal">
+          <div className="self-stretch justify-start text-black text-lg font-medium leading-normal">
             Popular Categories
           </div>
         </div>
@@ -34,21 +34,21 @@ const PopularCategories = () => {
             <div className="flex-1 self-stretch relative bg-black/5" />
           </div>
           <div className="flex-1 inline-flex flex-col justify-start items-start">
-            <div className="self-stretch justify-start text-black text-base font-medium font-['Roboto'] leading-tight">
+            <div className="self-stretch justify-start text-black text-base font-medium leading-tight">
               {category.title}
             </div>
-            <div className="self-stretch justify-start text-black text-xs font-normal font-['Roboto'] leading-tight">
+            <div className="self-stretch justify-start text-black text-xs font-normal leading-tight">
               {category.description}
             </div>
             <div className="self-stretch py-1 inline-flex justify-start items-center gap-2">
               <div className="size- flex justify-start items-center gap-2">
-                <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
+                <div className="size-6 text-center justify-center text-black text-base font-normal leading-normal">
                   🏠
                 </div>
-                <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
+                <div className="size-6 text-center justify-center text-black text-base font-normal leading-normal">
                   👚
                 </div>
-                <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
+                <div className="size-6 text-center justify-center text-black text-base font-normal leading-normal">
                   📱
                 </div>
               </div>

@@ -8,7 +8,7 @@ const BottomNavigation = () => {
         <div className="size-7 text-center justify-center text-black text-xl leading-7">
           <FontAwesomeIcon icon="fa-solid fa-house" />
         </div>
-        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-normal font-['Roboto'] leading-none">
+        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-bold leading-none">
           Home
         </div>
       </div>
@@ -16,7 +16,7 @@ const BottomNavigation = () => {
         <div className="size-7 text-center justify-center text-black text-xl leading-7">
           <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
         </div>
-        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-normal font-['Roboto'] leading-none">
+        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-normal leading-none">
           Orders
         </div>
       </div>
@@ -24,7 +24,7 @@ const BottomNavigation = () => {
         <div className="size-7 text-center justify-center text-black text-xl leading-7">
           <FontAwesomeIcon icon="fa-solid fa-circle-user" />
         </div>
-        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-normal font-['Roboto'] leading-none">
+        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-normal leading-none">
           Profile
         </div>
       </div>

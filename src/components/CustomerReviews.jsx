@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../utils/supabase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CustomerReviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -36,7 +37,7 @@ const CustomerReviews = () => {
         <div className="self-stretch px-3 flex flex-col justify-center items-center gap-2 overflow-hidden">
             <div className="self-stretch pt-4 inline-flex justify-start items-center gap-3">
                 <div className="flex-1 inline-flex flex-col justify-start items-start">
-                    <div className="self-stretch justify-start text-black text-lg font-medium font-['Roboto'] leading-normal">
+                    <div className="self-stretch justify-start text-black text-lg font-medium leading-normal">
                         Customer Reviews
                     </div>
                 </div>
@@ -45,13 +46,15 @@ const CustomerReviews = () => {
                 {reviews.map(review => (
                     <div
                         key={review.id}
-                        className="w-56 p-3 bg-black/5 rounded-md inline-flex flex-col justify-center items-center gap-2"
+                        className="w-46 p-3 bg-black/5 rounded-md inline-flex flex-col justify-center items-center gap-2"
                     >
                         <div className="self-stretch inline-flex justify-start items-center gap-1">
                             <div className="flex-1 flex justify-start items-center gap-2">
-                                <div className="size-6 relative bg-black/10 rounded-3xl" />
+                                <div className="size-6 relative bg-black/10 rounded-3xl justify-center items-center flex">
+                                    <FontAwesomeIcon icon="fa-solid fa-circle-user" />
+                                </div>
                                 <div className="flex-1 inline-flex flex-col justify-start items-start">
-                                    <div className="self-stretch justify-start text-black text-xs font-medium font-['Roboto'] leading-none">
+                                    <div className="self-stretch justify-start text-black text-xs font-medium leading-none">
                                         {review.name}
                                     </div>
                                 </div>
@@ -60,7 +63,7 @@ const CustomerReviews = () => {
                         <div className="self-stretch text-yellow-500 text-sm">
                             {renderStars(review.rating)}
                         </div>
-                        <div className="self-stretch h-14 justify-start text-black text-sm font-normal font-['Roboto'] leading-tight">
+                        <div className="self-stretch h-14 justify-start text-black text-sm font-normal leading-tight">
                             {review.comment}
                         </div>
                     </div>
