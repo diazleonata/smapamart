@@ -42,11 +42,11 @@ const CustomerReviews = () => {
                     </div>
                 </div>
             </div>
-            <div className="self-stretch inline-flex justify-start items-start gap-2 overflow-x-auto scrollbar-hide">
+            <div className="self-stretch overflow-x-auto whitespace-nowrap snap-x snap-mandatory scroll-smooth scrollbar-hide">
                 {reviews.map(review => (
                     <div
                         key={review.id}
-                        className="w-46 p-3 bg-black/5 rounded-md inline-flex flex-col justify-center items-center gap-2"
+                        className="w-46 p-3 bg-black/5 rounded-md inline-flex flex-col justify-center items-center mr-2"
                     >
                         <div className="self-stretch inline-flex justify-start items-center gap-1">
                             <div className="flex-1 flex justify-start items-center gap-2">
@@ -63,7 +63,7 @@ const CustomerReviews = () => {
                         <div className="self-stretch text-yellow-500 text-sm">
                             {renderStars(review.rating)}
                         </div>
-                        <div className="self-stretch h-14 justify-start text-black text-sm font-normal leading-tight">
+                        <div className="self-stretch break-words whitespace-normal h-14 text-black text-sm font-normal leading-tight truncate w-full">
                             {review.comment}
                         </div>
                     </div>
