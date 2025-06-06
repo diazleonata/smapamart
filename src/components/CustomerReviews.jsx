@@ -1,49 +1,73 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { supabase } from "../utils/supabase";
 
 const CustomerReviews = () => {
-  const reviews = [
-    { id: 1, name: "Alice", comment: "Great quality!" },
-    { id: 2, name: "Bob", comment: "Fast shipping!" }
-  ];
+    const [reviews, setReviews] = useState([]);
 
-  return (
-    <div className="self-stretch px-3 flex flex-col justify-center items-center gap-2 overflow-hidden">
-      <div className="self-stretch pt-4 inline-flex justify-start items-center gap-3">
-        <div className="flex-1 inline-flex flex-col justify-start items-start">
-          <div className="self-stretch justify-start text-black text-lg font-medium font-['Roboto'] leading-normal">
-            Customer Reviews
-          </div>
-        </div>
-      </div>
-      <div className="self-stretch inline-flex justify-start items-start gap-2">
-        {reviews.map((review) => (
-          <div key={review.id} className="w-56 p-3 bg-black/5 rounded-md inline-flex flex-col justify-center items-center gap-2 overflow-hidden">
-            <div className="self-stretch inline-flex justify-start items-center gap-1">
-              <div className="flex-1 flex justify-start items-center gap-2">
-                <div className="size-6 relative bg-black/10 rounded-3xl" />
+    useEffect(() => {
+        const fetchReviews = async () => {
+            const { data, error } = await supabase
+                .from("reviews")
+                .select("*")
+                .order("created_at", { ascending: false });
+
+            if (error) {
+                console.error("Error fetching reviews:", error);
+            } else {
+                setReviews(data);
+            }
+        };
+
+        fetchReviews();
+    }, []);
+
+    const renderStars = rating => {
+        return [...Array(5)].map((_, i) => (
+            <span
+                key={i}
+                className={i < rating ? "text-yellow-400" : "text-gray-300"}
+            >
+                ★
+            </span>
+        ));
+    };
+
+    return (
+        <div className="self-stretch px-3 flex flex-col justify-center items-center gap-2 overflow-hidden">
+            <div className="self-stretch pt-4 inline-flex justify-start items-center gap-3">
                 <div className="flex-1 inline-flex flex-col justify-start items-start">
-                  <div className="self-stretch justify-start text-black text-xs font-medium font-['Roboto'] leading-none">
-                    {review.name}
-                  </div>
+                    <div className="self-stretch justify-start text-black text-lg font-medium font-['Roboto'] leading-normal">
+                        Customer Reviews
+                    </div>
                 </div>
-              </div>
-              <div className="w-14 h-2.5 relative">
-                <div className="w-14 h-2.5 left-0 top-0 absolute bg-yellow-400" />
-              </div>
             </div>
-            <div className="self-stretch h-14 justify-start text-black text-sm font-normal font-['Roboto'] leading-tight">
-              {review.comment}
+            <div className="self-stretch inline-flex justify-start items-start gap-2 overflow-x-auto scrollbar-hide">
+                {reviews.map(review => (
+                    <div
+                        key={review.id}
+                        className="w-56 p-3 bg-black/5 rounded-md inline-flex flex-col justify-center items-center gap-2"
+                    >
+                        <div className="self-stretch inline-flex justify-start items-center gap-1">
+                            <div className="flex-1 flex justify-start items-center gap-2">
+                                <div className="size-6 relative bg-black/10 rounded-3xl" />
+                                <div className="flex-1 inline-flex flex-col justify-start items-start">
+                                    <div className="self-stretch justify-start text-black text-xs font-medium font-['Roboto'] leading-none">
+                                        {review.name}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="self-stretch text-yellow-500 text-sm">
+                            {renderStars(review.rating)}
+                        </div>
+                        <div className="self-stretch h-14 justify-start text-black text-sm font-normal font-['Roboto'] leading-tight">
+                            {review.comment}
+                        </div>
+                    </div>
+                ))}
             </div>
-            <div className="self-stretch inline-flex justify-start items-center gap-2">
-              <div className="size-6 text-center justify-center text-black text-base font-normal font-['Roboto'] leading-normal">
-                💬
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default CustomerReviews
+export default CustomerReviews;

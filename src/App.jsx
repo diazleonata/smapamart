@@ -8,28 +8,24 @@ import PopularCategories from "./components/PopularCategories";
 import BottomNavigation from "./components/BottomNavigation";
 
 function App() {
-  return (
-    // Desktop centering wrapper
-    <div className="min-h-screen bg-gray-100 flex justify-center items-start">
-      {/* Mobile container */}
-      <div className="w-96 pb-16 relative bg-white inline-flex flex-col justify-start items-center gap-3 shadow-lg">
-        {/* Header Component */}
-        <Header />
-        {/* Search Section Component */}
-        <SearchSection />
-        {/* Quick Actions Component */}
-        <QuickActions />
-        {/* Top Picks Component */}
-        <TopPicks />
-        {/* Customer Reviews Component */}
-        <CustomerReviews />
-        {/* Popular Categories Component */}
-        <PopularCategories />
-        {/* Bottom Navigation Component */}
-        <BottomNavigation />
-      </div>
-    </div>
-  );
+    return (
+        <div className="w-full max-w-md mx-auto bg-white pb-16 flex flex-col gap-3 shadow-lg overflow-hidden">
+            {/* Header Component */}
+            <Header />
+            {/* Search Section Component */}
+            <SearchSection />
+            {/* Quick Actions Component */}
+            <QuickActions />
+            {/* Top Picks Component */}
+            <TopPicks />
+            {/* Customer Reviews Component */}
+            <CustomerReviews />
+            {/* Popular Categories Component */}
+            <PopularCategories />
+            {/* Bottom Navigation Component */}
+            <BottomNavigation />
+        </div>
+    );
 }
 
 export default App;

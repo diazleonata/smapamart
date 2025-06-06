@@ -30,14 +30,14 @@ const TopPicks = () => {
                     </div>
                 </div>
             </div>
-            <div className="self-stretch inline-flex justify-start items-start gap-2">
+            <div className="self-stretch overflow-x-auto whitespace-nowrap snap-x snap-mandatory scroll-smooth scrollbar-hide">
                 {products.map(product => (
                     <div
                         key={product.id}
-                        className="w-36 rounded-md outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-center overflow-hidden"
+                        className="w-36 rounded-md outline outline-1 outline-offset-[-1px] outline-black/10 inline-block align-top mr-2"
                     >
                         <div
-                            className="self-stretch h-36 relative"
+                            className="self-stretch h-36 relative rounded-md outline-black/10 outline-offset-[-1px] outline-1 outline"
                             style={{
                                 backgroundImage: `url(${product.image})`,
                                 backgroundSize: "cover",
@@ -49,7 +49,7 @@ const TopPicks = () => {
                             </div>
                         </div>
                         <div className="self-stretch p-2 flex flex-col justify-start items-start gap-1">
-                            <div className="text-black text-xs font-normal font-['Roboto'] leading-none">
+                            <div className="text-black text-xs font-normal font-['Roboto'] leading-none truncate w-full">
                                 {product.name}
                             </div>
                             <div className="text-black text-base font-medium font-['Roboto'] leading-normal">
