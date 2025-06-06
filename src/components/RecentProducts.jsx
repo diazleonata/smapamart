@@ -10,7 +10,6 @@ const RecentProducts = () => {
                 .from("products")
                 .select("*")
                 .order("created_at", { ascending: false })
-                .limit(6); // Adjust limit as needed
 
             if (error) {
                 console.error("Error fetching recent products:", error);
@@ -38,7 +37,7 @@ const RecentProducts = () => {
                         className="rounded-md outline outline-1 outline-offset-[-1px] outline-black/10"
                     >
                         <div
-                            className="h-36 relative rounded-md"
+                            className="h-36 relative rounded-md outline-black/10 outline-offset-[-1px] outline-1 outline"
                             style={{
                                 backgroundImage: `url(${product.image})`,
                                 backgroundSize: "cover",
