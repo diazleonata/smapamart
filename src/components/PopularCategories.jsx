@@ -40,19 +40,6 @@ const PopularCategories = () => {
             <div className="self-stretch justify-start text-black text-xs font-normal leading-tight">
               {category.description}
             </div>
-            <div className="self-stretch py-1 inline-flex justify-start items-center gap-2">
-              <div className="size- flex justify-start items-center gap-2">
-                <div className="size-6 text-center justify-center text-black text-base font-normal leading-normal">
-                  🏠
-                </div>
-                <div className="size-6 text-center justify-center text-black text-base font-normal leading-normal">
-                  👚
-                </div>
-                <div className="size-6 text-center justify-center text-black text-base font-normal leading-normal">
-                  📱
-                </div>
-              </div>
-            </div>
           </div>
           {index < categories.length - 1 && (
             <div className="w-80 h-0 left-0 top-[96px] absolute outline outline-1 outline-offset-[-0.50px] outline-black/10" />

@@ -6,6 +6,7 @@ import TopPicks from "./components/TopPicks";
 import CustomerReviews from "./components/CustomerReviews";
 import PopularCategories from "./components/PopularCategories";
 import BottomNavigation from "./components/BottomNavigation";
+import RecentProducts from "./components/RecentProducts";
 
 function App() {
     return (
@@ -24,6 +25,8 @@ function App() {
             <PopularCategories />
             {/* Bottom Navigation Component */}
             <BottomNavigation />
+            {/* Recent Products Component */}
+            <RecentProducts />
         </div>
     );
 }
