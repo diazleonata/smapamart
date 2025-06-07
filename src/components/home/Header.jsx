@@ -1,31 +1,32 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleDollarToSlot, faStore } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-    return (
-        <div className="sticky top-0 z-50 self-stretch bg-white shadow-[0px_0px_6px_0px_rgba(0,0,0,0.12)] flex flex-col justify-start items-start">
-            {/* App Header */}
-            <div className="self-stretch pl-4 pr-2 py-3 inline-flex justify-start items-center gap-2">
-                <div className="flex-1 justify-start text-black text-xl font-medium leading-normal">
-                    Marketplace
-                </div>
-                <div className="size- flex justify-start items-center gap-2">
-                    <a
-                        href="https://saweria.co/leonatadiaz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <div className="text-center justify-center leading-normal">
-                            <FontAwesomeIcon
-                                icon="fa-solid fa-circle-dollar-to-slot"
-                                className="text-2xl"
-                            />
-                        </div>
-                    </a>
-                </div>
-            </div>
+  return (
+    <div className="top-0 z-50 w-full bg-white shadow-md border-b border-black/10">
+      <div className="px-4 py-3 flex items-center justify-between">
+        {/* Left side */}
+        <div className="flex items-center gap-2">
+          <FontAwesomeIcon icon={faStore} className="text-xl text-black" />
+          <span className="text-xl font-semibold text-black">Marketplace</span>
         </div>
-    );
+
+        {/* Right side */}
+        <a
+          href="https://saweria.co/leonatadiaz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:scale-105 transition-transform duration-150 active:scale-95"
+        >
+          <FontAwesomeIcon
+            icon={faCircleDollarToSlot}
+            className="text-2xl text-black/80 hover:text-black"
+          />
+        </a>
+      </div>
+    </div>
+  );
 };
 
 export default Header;
