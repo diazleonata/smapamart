@@ -1,10 +1,10 @@
-// src/components/common/CommitPopup.jsx
 import React, { useEffect, useState } from "react";
 
 const CommitPopup = () => {
   const [show, setShow] = useState(true);
   const [commits, setCommits] = useState([]);
   const [visible, setVisible] = useState(false);
+  const version = __APP_VERSION__;
 
   useEffect(() => {
     const fetchCommits = async () => {
@@ -19,7 +19,7 @@ const CommitPopup = () => {
         setCommits([
           {
             sha: "error",
-            commit: { message: "Gagal mengambil data commit.", author: { date: "" } },
+            commit: { message: "Failed to fetch commit data.", author: { date: "" } },
           },
         ]);
         setVisible(true);
@@ -47,7 +47,10 @@ const CommitPopup = () => {
           visible ? "scale-100" : "scale-95"
         }`}
       >
-        <h2 className="text-lg font-bold">🚧 Website dalam tahap pengembangan</h2>
+        <h2 className="text-lg font-bold">🚧 Website still in development</h2>
+         <div className="flex items-center gap-3">
+          <span className="text-xs text-black/50">Web version: v{version}</span>
+          </div>
         <div className="space-y-2 max-h-80 overflow-y-auto pr-1">
           {commits.map((commit) => (
             <div key={commit.sha} className="border-b border-black/10 pb-1">
@@ -62,7 +65,7 @@ const CommitPopup = () => {
           onClick={handleClose}
           className="px-4 py-1 bg-black text-white text-sm rounded-md hover:bg-black/80 transition"
         >
-          Tutup
+          Close
         </button>
       </div>
     </div>
