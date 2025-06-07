@@ -4,7 +4,6 @@ import QuickActions from "../components/home/QuickActions";
 import TopPicks from "../components/home/TopPicks";
 import CustomerReviews from "../components/home/CustomerReviews";
 import PopularCategories from "../components/home/PopularCategories";
-import BottomNavigation from "../components/common/BottomNavigation";
 import RecentProducts from "../components/home/RecentProducts";
 
 function Home() {
@@ -22,8 +21,6 @@ function Home() {
             <CustomerReviews />
             {/* Popular Categories Component */}
             <PopularCategories />
-            {/* Bottom Navigation Component */}
-            <BottomNavigation />
             {/* Recent Products Component */}
             <RecentProducts />
         </div>

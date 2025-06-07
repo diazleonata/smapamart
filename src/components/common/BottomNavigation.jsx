@@ -1,35 +1,51 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  faHouse,
+  faClipboardList,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BottomNavigation = () => {
+  const location = useLocation();
+
+  const navItems = [
+    { name: "Home", path: "/", icon: faHouse },
+    { name: "Orders", path: "/orders", icon: faClipboardList },
+    { name: "Profile", path: "/profile", icon: faUser },
+  ];
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white shadow-[0px_0px_6px_0px_rgba(0,0,0,0.12)] inline-flex justify-start items-start overflow-hidden">
-      <div className="flex-1 p-1 inline-flex flex-col justify-start items-center">
-        <div className="size-7 text-center justify-center text-black text-xl leading-7">
-          <FontAwesomeIcon icon="fa-solid fa-house" />
-        </div>
-        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-bold leading-none">
-          Home
-        </div>
-      </div>
-      <div className="flex-1 p-1 inline-flex flex-col justify-start items-center">
-        <div className="size-7 text-center justify-center text-black text-xl leading-7">
-          <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
-        </div>
-        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-normal leading-none">
-          Orders
-        </div>
-      </div>
-      <div className="flex-1 p-1 inline-flex flex-col justify-start items-center">
-        <div className="size-7 text-center justify-center text-black text-xl leading-7">
-          <FontAwesomeIcon icon="fa-solid fa-circle-user" />
-        </div>
-        <div className="self-stretch h-3.5 text-center justify-center text-black text-[10px] font-normal leading-none">
-          Profile
-        </div>
-      </div>
+    <div className="fixed left-0 bottom-0 right-0 w-full h-16 bg-white border-t border-black/10 flex justify-around items-center">
+      {navItems.map((item) => {
+        const isActive = location.pathname === item.path;
+
+        return (
+          <Link
+            key={item.name}
+            to={item.path}
+            className="flex flex-col items-center justify-center gap-1"
+          >
+            <FontAwesomeIcon
+              icon={item.icon}
+              className={`text-xl transition-all duration-200 ease-in-out ${
+                isActive ? "text-black" : "text-black/40"
+              }`}
+            />
+            <span
+              className={`text-xs leading-none h-[16px] transition-all duration-200 ease-in-out ${
+                isActive ? "text-black font-medium" : "text-black/40 font-medium"
+              }`}
+              style={{ minWidth: "40px", textAlign: "center" }}
+            >
+              {item.name}
+            </span>
+          </Link>
+        );
+      })}
     </div>
   );
 };
 
-export default BottomNavigation
+export default BottomNavigation;

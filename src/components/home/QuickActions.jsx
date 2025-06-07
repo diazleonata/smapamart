@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const QuickActions = () => {
     const handleShare = async () => {
@@ -8,7 +9,7 @@ const QuickActions = () => {
                 await navigator.share({
                     title: "Check out this site!",
                     text: "📚 Marketplace sekolah yang dibuat oleh siswa, untuk siswa. Langsung cek yuk!",
-                    url: window.location.href,
+                    url: window.location.href
                 });
                 console.log("Shared successfully");
             } catch (error) {
@@ -43,12 +44,14 @@ const QuickActions = () => {
             </div>
 
             <div className="flex-1 p-1 rounded-md outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-center gap-1">
-                <div className="size-12 flex items-center justify-center bg-black/5 rounded-3xl">
-                    <FontAwesomeIcon
-                        icon="fa-solid fa-comment"
-                        className="text-black text-2xl"
-                    />
-                </div>
+                <Link to="/reviews">
+                    <div className="size-12 flex items-center justify-center bg-black/5 rounded-3xl">
+                        <FontAwesomeIcon
+                            icon="fa-solid fa-comment"
+                            className="text-black text-2xl"
+                        />
+                    </div>
+                </Link>
             </div>
         </div>
     );
